@@ -1,0 +1,16 @@
+{
+  "name": "vue-use-material",
+  "version": "1.0.3",
+  "description": "",
+  "main": "./dist/vue-use-material.umd.min.js",
+  "scripts": {
+    "dev": "vue serve test/normal.vue",
+    "build": "vue build --target lib --name vue-use-material './src/index.vue'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jszip": "^3.7.1"
+  }
+}
