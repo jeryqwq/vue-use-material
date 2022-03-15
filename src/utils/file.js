@@ -48,6 +48,8 @@ export const isImgFile = function (path) {
   );
 };
 export const isResource = function (type) {
+  const typeArr = type.split('.');
+  const fileType = typeArr[typeArr.length - 1];
   return [
     'gif',
     'jpeg',
@@ -62,7 +64,7 @@ export const isResource = function (type) {
     'exal',
     'ps',
     'mov',
-  ].some((i) => i === type);
+  ].some((i) => i === fileType);
 };
 export const fileAdapter = function (
   file,
