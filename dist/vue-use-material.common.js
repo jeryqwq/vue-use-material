@@ -2803,12 +2803,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: /Users/chenjie/.nvm/versions/node/v12.22.3/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1bbf6577-vue-loader-template"}!/Users/chenjie/.nvm/versions/node/v12.22.3/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/Users/chenjie/.nvm/versions/node/v12.22.3/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--1-0!/Users/chenjie/.nvm/versions/node/v12.22.3/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader/lib??vue-loader-options!./src/index.vue?vue&type=template&id=d92a80ea&
-var lib_vue_loader_options_srcvue_type_template_id_d92a80ea_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"elWrap"})}
+// CONCATENATED MODULE: /Users/chenjie/.nvm/versions/node/v12.22.3/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1bbf6577-vue-loader-template"}!/Users/chenjie/.nvm/versions/node/v12.22.3/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/Users/chenjie/.nvm/versions/node/v12.22.3/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--1-0!/Users/chenjie/.nvm/versions/node/v12.22.3/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader/lib??vue-loader-options!./src/index.vue?vue&type=template&id=16e2fae2&
+var lib_vue_loader_options_srcvue_type_template_id_16e2fae2_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"elWrap"})}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/index.vue?vue&type=template&id=d92a80ea&
+// CONCATENATED MODULE: ./src/index.vue?vue&type=template&id=16e2fae2&
 
 // CONCATENATED MODULE: /Users/chenjie/.nvm/versions/node/v12.22.3/lib/node_modules/@vue/cli-service-global/node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
@@ -2972,113 +2972,11 @@ var es_array_from = __webpack_require__("342b");
 // EXTERNAL MODULE: /Users/chenjie/.nvm/versions/node/v12.22.3/lib/node_modules/@vue/cli-service-global/node_modules/core-js/modules/es.string.iterator.js
 var es_string_iterator = __webpack_require__("26e3");
 
-// CONCATENATED MODULE: ./src/utils/index.js
+// EXTERNAL MODULE: /Users/chenjie/.nvm/versions/node/v12.22.3/lib/node_modules/@vue/cli-service-global/node_modules/core-js/modules/es.string.replace.js
+var es_string_replace = __webpack_require__("d4e8");
 
-
-
-
-
-
-
-var removeScript = function removeScript(libName) {
-  var _scriptEl$parentNode;
-
-  var scriptEl = document.getElementById("vis-lib-".concat(libName));
-  scriptEl && ((_scriptEl$parentNode = scriptEl.parentNode) === null || _scriptEl$parentNode === void 0 ? void 0 : _scriptEl$parentNode.removeChild(scriptEl));
-};
-var destoryPreview = function destoryPreview() {
-  var styles = document.getElementsByClassName('VIS_STYLE_CLASSNAME');
-  var scripts = document.getElementsByClassName('VIS_LIB_SCRIPT_CLASSNAME');
-  Array.from(styles).forEach(function (element) {
-    var _element$parentNode;
-
-    (_element$parentNode = element.parentNode) === null || _element$parentNode === void 0 ? void 0 : _element$parentNode.removeChild(element);
-  });
-  Array.from(scripts).forEach(function (element) {
-    var _element$parentNode2;
-
-    (_element$parentNode2 = element.parentNode) === null || _element$parentNode2 === void 0 ? void 0 : _element$parentNode2.removeChild(element);
-  });
-};
-var addStyles = function addStyles(content, scopedId, options) {
-  var path = options.path,
-      shadowEl = options.shadowEl; // css 样式热更新和首次加载
-
-  var elId = scopedId || path;
-  var elTarget = document.getElementById("".concat(elId, "-vis-style"));
-
-  if (elTarget) {
-    // 热更新
-    elTarget.textContent = content;
-  } else {
-    var style = document.createElement('style');
-    style.classList.add('VIS_STYLE_CLASSNAME');
-    style.id = "".concat(scopedId, "-vis-style");
-    style.textContent = content; // const ref = document.head.getElementsByTagName('style')[0] || null;
-
-    (shadowEl || document.head).appendChild(style);
-  }
-};
-var loadScript = function loadScript(url) {
-  return new Promise(function (resolve) {
-    var el = document.createElement('script');
-    el.src = url;
-    document.head.appendChild(el);
-
-    el.onload = function () {
-      resolve(true);
-    };
-  });
-};
-var loadLib = function loadLib(content) {
-  var scriptEl = document.createElement('script');
-  scriptEl.className = 'VIS_LIB_SCRIPT_CLASSNAME';
-  scriptEl.type = 'text/javascript';
-  scriptEl.textContent = "\n    ".concat(content, "\n  ");
-  document.head.appendChild(scriptEl);
-};
-var utils_makeShadowRaw = function makeShadowRaw(el) {
-  var childNodes = el.childNodes;
-
-  try {
-    var tempEl = document.createDocumentFragment(); // tempEl.classList.add('sand-box-wrap')
-
-    var _iterator = _createForOfIteratorHelper(childNodes),
-        _step;
-
-    try {
-      for (_iterator.s(); !(_step = _iterator.n()).done;) {
-        var node = _step.value;
-        tempEl.appendChild(node);
-      }
-    } catch (err) {
-      _iterator.e(err);
-    } finally {
-      _iterator.f();
-    }
-
-    var oldRootShadowRoot = el.shadowRoot;
-
-    if (oldRootShadowRoot) {
-      console.log("its already open shadow, attach shadow mutiple times");
-      return;
-    } else {
-      var shadowRoot = el.attachShadow({
-        mode: 'open'
-      });
-      shadowRoot.appendChild(tempEl);
-      return shadowRoot;
-    }
-  } catch (e) {
-    console.error('[shadow] make shadow-root failed', el, childNodes);
-  }
-};
-// EXTERNAL MODULE: /Users/chenjie/.nvm/versions/node/v12.22.3/lib/node_modules/@vue/cli-service-global/node_modules/core-js/modules/es.string.starts-with.js
-var es_string_starts_with = __webpack_require__("9a2f");
-
-// EXTERNAL MODULE: ./node_modules/jszip/dist/jszip.min.js
-var jszip_min = __webpack_require__("c4e3");
-var jszip_min_default = /*#__PURE__*/__webpack_require__.n(jszip_min);
+// EXTERNAL MODULE: /Users/chenjie/.nvm/versions/node/v12.22.3/lib/node_modules/@vue/cli-service-global/node_modules/core-js/modules/es.string.replace-all.js
+var es_string_replace_all = __webpack_require__("4c28");
 
 // EXTERNAL MODULE: /Users/chenjie/.nvm/versions/node/v12.22.3/lib/node_modules/@vue/cli-service-global/node_modules/core-js/modules/es.array.some.js
 var es_array_some = __webpack_require__("fa39");
@@ -3314,6 +3212,132 @@ var resolveFile = function resolveFile(path, content, cb) {
     console.error("unkonw fileType in file on path ".concat(path, ", please provide a include file postfix name before upload"));
   }
 };
+// CONCATENATED MODULE: ./src/utils/index.js
+
+
+
+
+
+
+
+
+
+
+
+var removeScript = function removeScript(libName) {
+  var _scriptEl$parentNode;
+
+  var scriptEl = document.getElementById("vis-lib-".concat(libName));
+  scriptEl && ((_scriptEl$parentNode = scriptEl.parentNode) === null || _scriptEl$parentNode === void 0 ? void 0 : _scriptEl$parentNode.removeChild(scriptEl));
+};
+var destoryPreview = function destoryPreview() {
+  var styles = document.getElementsByClassName('VIS_STYLE_CLASSNAME');
+  var scripts = document.getElementsByClassName('VIS_LIB_SCRIPT_CLASSNAME');
+  Array.from(styles).forEach(function (element) {
+    var _element$parentNode;
+
+    (_element$parentNode = element.parentNode) === null || _element$parentNode === void 0 ? void 0 : _element$parentNode.removeChild(element);
+  });
+  Array.from(scripts).forEach(function (element) {
+    var _element$parentNode2;
+
+    (_element$parentNode2 = element.parentNode) === null || _element$parentNode2 === void 0 ? void 0 : _element$parentNode2.removeChild(element);
+  });
+};
+var addStyles = function addStyles(content, scopedId, options) {
+  var path = options.path,
+      shadowEl = options.shadowEl; // css 样式热更新和首次加载
+
+  var elId = scopedId || path;
+  var elTarget = document.getElementById("".concat(elId, "-vis-style"));
+
+  if (elTarget) {
+    // 热更新
+    elTarget.textContent = content;
+  } else {
+    var style = document.createElement('style');
+    style.classList.add('VIS_STYLE_CLASSNAME');
+    style.id = "".concat(scopedId, "-vis-style");
+    style.textContent = content; // const ref = document.head.getElementsByTagName('style')[0] || null;
+
+    (shadowEl || document.head).appendChild(style);
+  }
+};
+var loadScript = function loadScript(url) {
+  return new Promise(function (resolve) {
+    var el = document.createElement('script');
+    el.src = url;
+    document.head.appendChild(el);
+
+    el.onload = function () {
+      resolve(true);
+    };
+  });
+};
+var loadLib = function loadLib(content) {
+  var scriptEl = document.createElement('script');
+  scriptEl.className = 'VIS_LIB_SCRIPT_CLASSNAME';
+  scriptEl.type = 'text/javascript';
+  scriptEl.textContent = "\n    ".concat(content, "\n  ");
+  document.head.appendChild(scriptEl);
+};
+var utils_makeShadowRaw = function makeShadowRaw(el) {
+  var childNodes = el.childNodes;
+
+  try {
+    var tempEl = document.createDocumentFragment(); // tempEl.classList.add('sand-box-wrap')
+
+    var _iterator = _createForOfIteratorHelper(childNodes),
+        _step;
+
+    try {
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        var node = _step.value;
+        tempEl.appendChild(node);
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
+    }
+
+    var oldRootShadowRoot = el.shadowRoot;
+
+    if (oldRootShadowRoot) {
+      console.log("its already open shadow, attach shadow mutiple times");
+      return;
+    } else {
+      var shadowRoot = el.attachShadow({
+        mode: 'open'
+      });
+      shadowRoot.appendChild(tempEl);
+      return shadowRoot;
+    }
+  } catch (e) {
+    console.error('[shadow] make shadow-root failed', el, childNodes);
+  }
+};
+var utils_cssUrlHandler = function cssUrlHandler(cssStr, files) {
+  var res = cssStr;
+
+  for (var key in files) {
+    var item = files[key];
+
+    if (isResource(key)) {
+      // 是资源素材的话替换url为blob
+      res = item.url && res.replaceAll('.' + key, item.url);
+    }
+  }
+
+  return res;
+};
+// EXTERNAL MODULE: /Users/chenjie/.nvm/versions/node/v12.22.3/lib/node_modules/@vue/cli-service-global/node_modules/core-js/modules/es.string.starts-with.js
+var es_string_starts_with = __webpack_require__("9a2f");
+
+// EXTERNAL MODULE: ./node_modules/jszip/dist/jszip.min.js
+var jszip_min = __webpack_require__("c4e3");
+var jszip_min_default = /*#__PURE__*/__webpack_require__.n(jszip_min);
+
 // CONCATENATED MODULE: ./src/utils/zip.js
 
 
@@ -3716,7 +3740,8 @@ var vm;
                     }
                   },
                   addStyle: function addStyle(context, scopedId, path) {
-                    addStyles(context, scopedId, {
+                    var replaceUrlCss = utils_cssUrlHandler(context, utils_fs.files);
+                    addStyles(replaceUrlCss, scopedId, {
                       shadowEl: elWrap === null || elWrap === void 0 ? void 0 : elWrap.shadowRoot,
                       path: path
                     });
@@ -4011,7 +4036,7 @@ function normalizeComponent (
 
 var component = normalizeComponent(
   srcvue_type_script_lang_js_,
-  lib_vue_loader_options_srcvue_type_template_id_d92a80ea_render,
+  lib_vue_loader_options_srcvue_type_template_id_16e2fae2_render,
   staticRenderFns,
   false,
   null,
@@ -5092,6 +5117,141 @@ var aFunction = function (argument) {
 module.exports = function (namespace, method) {
   return arguments.length < 2 ? aFunction(global[namespace]) : global[namespace] && global[namespace][method];
 };
+
+
+/***/ }),
+
+/***/ "4bbf":
+/***/ (function(module, exports, __webpack_require__) {
+
+var uncurryThis = __webpack_require__("d486");
+var toObject = __webpack_require__("d7a7");
+
+var floor = Math.floor;
+var charAt = uncurryThis(''.charAt);
+var replace = uncurryThis(''.replace);
+var stringSlice = uncurryThis(''.slice);
+var SUBSTITUTION_SYMBOLS = /\$([$&'`]|\d{1,2}|<[^>]*>)/g;
+var SUBSTITUTION_SYMBOLS_NO_NAMED = /\$([$&'`]|\d{1,2})/g;
+
+// `GetSubstitution` abstract operation
+// https://tc39.es/ecma262/#sec-getsubstitution
+module.exports = function (matched, str, position, captures, namedCaptures, replacement) {
+  var tailPos = position + matched.length;
+  var m = captures.length;
+  var symbols = SUBSTITUTION_SYMBOLS_NO_NAMED;
+  if (namedCaptures !== undefined) {
+    namedCaptures = toObject(namedCaptures);
+    symbols = SUBSTITUTION_SYMBOLS;
+  }
+  return replace(replacement, symbols, function (match, ch) {
+    var capture;
+    switch (charAt(ch, 0)) {
+      case '$': return '$';
+      case '&': return matched;
+      case '`': return stringSlice(str, 0, position);
+      case "'": return stringSlice(str, tailPos);
+      case '<':
+        capture = namedCaptures[stringSlice(ch, 1, -1)];
+        break;
+      default: // \d\d?
+        var n = +ch;
+        if (n === 0) return match;
+        if (n > m) {
+          var f = floor(n / 10);
+          if (f === 0) return match;
+          if (f <= m) return captures[f - 1] === undefined ? charAt(ch, 1) : captures[f - 1] + charAt(ch, 1);
+          return match;
+        }
+        capture = captures[n - 1];
+    }
+    return capture === undefined ? '' : capture;
+  });
+};
+
+
+/***/ }),
+
+/***/ "4c28":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var $ = __webpack_require__("a33f");
+var global = __webpack_require__("8869");
+var call = __webpack_require__("a41a");
+var uncurryThis = __webpack_require__("d486");
+var requireObjectCoercible = __webpack_require__("087d");
+var isCallable = __webpack_require__("8278");
+var isRegExp = __webpack_require__("5ff9");
+var toString = __webpack_require__("9fcf");
+var getMethod = __webpack_require__("82fb");
+var regExpFlags = __webpack_require__("a545");
+var getSubstitution = __webpack_require__("4bbf");
+var wellKnownSymbol = __webpack_require__("08c3");
+var IS_PURE = __webpack_require__("7dd0");
+
+var REPLACE = wellKnownSymbol('replace');
+var RegExpPrototype = RegExp.prototype;
+var TypeError = global.TypeError;
+var getFlags = uncurryThis(regExpFlags);
+var indexOf = uncurryThis(''.indexOf);
+var replace = uncurryThis(''.replace);
+var stringSlice = uncurryThis(''.slice);
+var max = Math.max;
+
+var stringIndexOf = function (string, searchValue, fromIndex) {
+  if (fromIndex > string.length) return -1;
+  if (searchValue === '') return fromIndex;
+  return indexOf(string, searchValue, fromIndex);
+};
+
+// `String.prototype.replaceAll` method
+// https://tc39.es/ecma262/#sec-string.prototype.replaceall
+$({ target: 'String', proto: true }, {
+  replaceAll: function replaceAll(searchValue, replaceValue) {
+    var O = requireObjectCoercible(this);
+    var IS_REG_EXP, flags, replacer, string, searchString, functionalReplace, searchLength, advanceBy, replacement;
+    var position = 0;
+    var endOfLastMatch = 0;
+    var result = '';
+    if (searchValue != null) {
+      IS_REG_EXP = isRegExp(searchValue);
+      if (IS_REG_EXP) {
+        flags = toString(requireObjectCoercible('flags' in RegExpPrototype
+          ? searchValue.flags
+          : getFlags(searchValue)
+        ));
+        if (!~indexOf(flags, 'g')) throw TypeError('`.replaceAll` does not allow non-global regexes');
+      }
+      replacer = getMethod(searchValue, REPLACE);
+      if (replacer) {
+        return call(replacer, searchValue, O, replaceValue);
+      } else if (IS_PURE && IS_REG_EXP) {
+        return replace(toString(O), searchValue, replaceValue);
+      }
+    }
+    string = toString(O);
+    searchString = toString(searchValue);
+    functionalReplace = isCallable(replaceValue);
+    if (!functionalReplace) replaceValue = toString(replaceValue);
+    searchLength = searchString.length;
+    advanceBy = max(1, searchLength);
+    position = stringIndexOf(string, searchString, 0);
+    while (position !== -1) {
+      replacement = functionalReplace
+        ? toString(replaceValue(searchString, position, string))
+        : getSubstitution(searchString, string, position, [], undefined, replaceValue);
+      result += stringSlice(string, endOfLastMatch, position) + replacement;
+      endOfLastMatch = position + searchLength;
+      position = stringIndexOf(string, searchString, position + advanceBy);
+    }
+    if (endOfLastMatch < string.length) {
+      result += stringSlice(string, endOfLastMatch);
+    }
+    return result;
+  }
+});
 
 
 /***/ }),
@@ -10891,6 +11051,150 @@ module.exports = bind ? function (fn) {
     return call.apply(fn, arguments);
   };
 };
+
+
+/***/ }),
+
+/***/ "d4e8":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var apply = __webpack_require__("b78c");
+var call = __webpack_require__("a41a");
+var uncurryThis = __webpack_require__("d486");
+var fixRegExpWellKnownSymbolLogic = __webpack_require__("fedd");
+var fails = __webpack_require__("bbf1");
+var anObject = __webpack_require__("35bb");
+var isCallable = __webpack_require__("8278");
+var toIntegerOrInfinity = __webpack_require__("990f");
+var toLength = __webpack_require__("5b81");
+var toString = __webpack_require__("9fcf");
+var requireObjectCoercible = __webpack_require__("087d");
+var advanceStringIndex = __webpack_require__("be2e");
+var getMethod = __webpack_require__("82fb");
+var getSubstitution = __webpack_require__("4bbf");
+var regExpExec = __webpack_require__("9c66");
+var wellKnownSymbol = __webpack_require__("08c3");
+
+var REPLACE = wellKnownSymbol('replace');
+var max = Math.max;
+var min = Math.min;
+var concat = uncurryThis([].concat);
+var push = uncurryThis([].push);
+var stringIndexOf = uncurryThis(''.indexOf);
+var stringSlice = uncurryThis(''.slice);
+
+var maybeToString = function (it) {
+  return it === undefined ? it : String(it);
+};
+
+// IE <= 11 replaces $0 with the whole match, as if it was $&
+// https://stackoverflow.com/questions/6024666/getting-ie-to-replace-a-regex-with-the-literal-string-0
+var REPLACE_KEEPS_$0 = (function () {
+  // eslint-disable-next-line regexp/prefer-escape-replacement-dollar-char -- required for testing
+  return 'a'.replace(/./, '$0') === '$0';
+})();
+
+// Safari <= 13.0.3(?) substitutes nth capture where n>m with an empty string
+var REGEXP_REPLACE_SUBSTITUTES_UNDEFINED_CAPTURE = (function () {
+  if (/./[REPLACE]) {
+    return /./[REPLACE]('a', '$0') === '';
+  }
+  return false;
+})();
+
+var REPLACE_SUPPORTS_NAMED_GROUPS = !fails(function () {
+  var re = /./;
+  re.exec = function () {
+    var result = [];
+    result.groups = { a: '7' };
+    return result;
+  };
+  // eslint-disable-next-line regexp/no-useless-dollar-replacements -- false positive
+  return ''.replace(re, '$<a>') !== '7';
+});
+
+// @@replace logic
+fixRegExpWellKnownSymbolLogic('replace', function (_, nativeReplace, maybeCallNative) {
+  var UNSAFE_SUBSTITUTE = REGEXP_REPLACE_SUBSTITUTES_UNDEFINED_CAPTURE ? '$' : '$0';
+
+  return [
+    // `String.prototype.replace` method
+    // https://tc39.es/ecma262/#sec-string.prototype.replace
+    function replace(searchValue, replaceValue) {
+      var O = requireObjectCoercible(this);
+      var replacer = searchValue == undefined ? undefined : getMethod(searchValue, REPLACE);
+      return replacer
+        ? call(replacer, searchValue, O, replaceValue)
+        : call(nativeReplace, toString(O), searchValue, replaceValue);
+    },
+    // `RegExp.prototype[@@replace]` method
+    // https://tc39.es/ecma262/#sec-regexp.prototype-@@replace
+    function (string, replaceValue) {
+      var rx = anObject(this);
+      var S = toString(string);
+
+      if (
+        typeof replaceValue == 'string' &&
+        stringIndexOf(replaceValue, UNSAFE_SUBSTITUTE) === -1 &&
+        stringIndexOf(replaceValue, '$<') === -1
+      ) {
+        var res = maybeCallNative(nativeReplace, rx, S, replaceValue);
+        if (res.done) return res.value;
+      }
+
+      var functionalReplace = isCallable(replaceValue);
+      if (!functionalReplace) replaceValue = toString(replaceValue);
+
+      var global = rx.global;
+      if (global) {
+        var fullUnicode = rx.unicode;
+        rx.lastIndex = 0;
+      }
+      var results = [];
+      while (true) {
+        var result = regExpExec(rx, S);
+        if (result === null) break;
+
+        push(results, result);
+        if (!global) break;
+
+        var matchStr = toString(result[0]);
+        if (matchStr === '') rx.lastIndex = advanceStringIndex(S, toLength(rx.lastIndex), fullUnicode);
+      }
+
+      var accumulatedResult = '';
+      var nextSourcePosition = 0;
+      for (var i = 0; i < results.length; i++) {
+        result = results[i];
+
+        var matched = toString(result[0]);
+        var position = max(min(toIntegerOrInfinity(result.index), S.length), 0);
+        var captures = [];
+        // NOTE: This is equivalent to
+        //   captures = result.slice(1).map(maybeToString)
+        // but for some reason `nativeSlice.call(result, 1, result.length)` (called in
+        // the slice polyfill when slicing native arrays) "doesn't work" in safari 9 and
+        // causes a crash (https://pastebin.com/N21QzeQA) when trying to debug it.
+        for (var j = 1; j < result.length; j++) push(captures, maybeToString(result[j]));
+        var namedCaptures = result.groups;
+        if (functionalReplace) {
+          var replacerArgs = concat([matched], captures, position, S);
+          if (namedCaptures !== undefined) push(replacerArgs, namedCaptures);
+          var replacement = toString(apply(replaceValue, undefined, replacerArgs));
+        } else {
+          replacement = getSubstitution(matched, S, position, captures, namedCaptures, replaceValue);
+        }
+        if (position >= nextSourcePosition) {
+          accumulatedResult += stringSlice(S, nextSourcePosition, position) + replacement;
+          nextSourcePosition = position + matched.length;
+        }
+      }
+      return accumulatedResult + stringSlice(S, nextSourcePosition);
+    }
+  ];
+}, !REPLACE_SUPPORTS_NAMED_GROUPS || !REPLACE_KEEPS_$0 || REGEXP_REPLACE_SUBSTITUTES_UNDEFINED_CAPTURE);
 
 
 /***/ }),

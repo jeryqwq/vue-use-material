@@ -1,3 +1,4 @@
+import { isResource } from './file'
 export const removeScript = function (libName) {
   const scriptEl = document.getElementById(`vis-lib-${libName}`);
   scriptEl && scriptEl.parentNode?.removeChild(scriptEl);
@@ -77,4 +78,18 @@ export const makeShadowRaw = function (el) {
   } catch (e) {
     console.error('[shadow] make shadow-root failed', el, childNodes);
   }
+};
+export const cssUrlHandler = function (
+  cssStr,
+  files,
+) {
+  let res = cssStr;
+  for (const key in files) {
+    const item = files[key];
+    if (isResource(key)) {
+      // 是资源素材的话替换url为blob
+      res = item.url && res.replaceAll('.' + key, item.url);
+    }
+  }
+  return res;
 };

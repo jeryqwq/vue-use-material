@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import {loadScript, destoryPreview, addStyles, makeShadowRaw}  from './utils/index'
+import {loadScript, destoryPreview, addStyles, makeShadowRaw, cssUrlHandler}  from './utils/index'
 import { loadZipFile } from './utils/zip'
 import { fileTransform, isResource } from './utils/file'
 import fs from './utils/fs'
@@ -74,7 +74,8 @@ export default {
           },
         },
         addStyle: (context, scopedId, path) => {
-          addStyles(context, scopedId, { shadowEl: elWrap?.shadowRoot, path });
+          const replaceUrlCss = cssUrlHandler(context, fs.files);
+          addStyles(replaceUrlCss, scopedId, { shadowEl: elWrap?.shadowRoot, path });
         },
         handleModule: async function (
           type,
