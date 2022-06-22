@@ -2812,12 +2812,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: /Users/chenjie/.nvm/versions/node/v12.22.3/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1bbf6577-vue-loader-template"}!/Users/chenjie/.nvm/versions/node/v12.22.3/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/Users/chenjie/.nvm/versions/node/v12.22.3/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--1-0!/Users/chenjie/.nvm/versions/node/v12.22.3/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader/lib??vue-loader-options!./src/index.vue?vue&type=template&id=16e2fae2&
-var lib_vue_loader_options_srcvue_type_template_id_16e2fae2_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"elWrap"})}
+// CONCATENATED MODULE: /Users/chenjie/.nvm/versions/node/v12.22.3/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1bbf6577-vue-loader-template"}!/Users/chenjie/.nvm/versions/node/v12.22.3/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/Users/chenjie/.nvm/versions/node/v12.22.3/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--1-0!/Users/chenjie/.nvm/versions/node/v12.22.3/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader/lib??vue-loader-options!./src/index.vue?vue&type=template&id=0545eb5a&
+var lib_vue_loader_options_srcvue_type_template_id_0545eb5a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"elWrap"})}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/index.vue?vue&type=template&id=16e2fae2&
+// CONCATENATED MODULE: ./src/index.vue?vue&type=template&id=0545eb5a&
 
 // CONCATENATED MODULE: /Users/chenjie/.nvm/versions/node/v12.22.3/lib/node_modules/@vue/cli-service-global/node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
@@ -3606,7 +3606,6 @@ var fs_fs = new fs_FileSystem(); // loadZipFile('/test.zip', fs, () => {
 var forceVue;
 var lastVue;
 var lib_vue_loader_options_srcvue_type_script_lang_js_options;
-var vm;
 /* harmony default export */ var lib_vue_loader_options_srcvue_type_script_lang_js_ = ({
   props: {
     src: {
@@ -3900,7 +3899,7 @@ var vm;
                   }
                 };
                 utils_makeShadowRaw(elWrap);
-                vm = lastVue.createApp(lastVue.defineAsyncComponent(function () {
+                _this2._vm = lastVue.createApp(lastVue.defineAsyncComponent(function () {
                   return loader.loadModule('/index.vue', lib_vue_loader_options_srcvue_type_script_lang_js_options);
                 }), _this2.$attrs).mount(elWrap === null || elWrap === void 0 ? void 0 : elWrap.shadowRoot);
                 window.Vue = forceVue;
@@ -3917,13 +3916,13 @@ var vm;
       var _this3 = this;
 
       setTimeout(function () {
-        vm.$.attrs = _this3.$attrs; // hack 修改组件数据源实现状态更新
+        _this3._vm.$.attrs = _this3.$attrs; // hack 修改组件数据源实现状态更新
 
-        vm.$forceUpdate();
+        _this3._vm.$forceUpdate();
       }, 0);
     },
     getVm: function getVm() {
-      return vm;
+      return this._vm;
     },
     getVue: function getVue() {
       return lastVue;
@@ -4045,7 +4044,7 @@ function normalizeComponent (
 
 var component = normalizeComponent(
   srcvue_type_script_lang_js_,
-  lib_vue_loader_options_srcvue_type_template_id_16e2fae2_render,
+  lib_vue_loader_options_srcvue_type_template_id_0545eb5a_render,
   staticRenderFns,
   false,
   null,

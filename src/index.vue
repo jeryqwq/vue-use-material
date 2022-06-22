@@ -11,7 +11,6 @@ import fs from './utils/fs'
 let forceVue
 let lastVue
 let options
-let vm
 export default {
   props: {
     src: {
@@ -147,7 +146,7 @@ export default {
         },
       };
       makeShadowRaw(elWrap);
-      vm = lastVue.createApp(
+      this._vm = lastVue.createApp(
         lastVue.defineAsyncComponent( () => loader.loadModule('/index.vue', options)),
         this.$attrs,
       ).mount(elWrap?.shadowRoot);
@@ -155,12 +154,12 @@ export default {
     },
     reload() {
       setTimeout(() => {
-        vm.$.attrs = this.$attrs // hack 修改组件数据源实现状态更新
-        vm.$forceUpdate()
+        this._vm.$.attrs = this.$attrs // hack 修改组件数据源实现状态更新
+        this._vm.$forceUpdate()
       }, 0);
     },
     getVm () {
-      return vm
+      return this._vm
     },
     getVue () {
       return lastVue

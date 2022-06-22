@@ -15,7 +15,7 @@ export default {
   data () {
     return {
       test: 0,
-      src: "http://10.28.185.162:8000/static/material/2/1512322095429144577/1.0.0"
+      src: "http://127.0.0.1:7001/static/material/components/1539416291669495809/1.1.2"
     }
   },
   mounted() {
