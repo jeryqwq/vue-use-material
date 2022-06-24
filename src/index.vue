@@ -37,7 +37,7 @@ export default {
   methods: {
     async init() {
       forceVue = window.Vue || window.vue
-      if(!(forceVue && forceVue.version.startWith('3.2'))) { // vue 版本非3.2
+      if(!(forceVue && forceVue.version.startsWith('3.2'))) { // vue 版本非3.2
         await loadScript(this.perfix + '/lib/vue.js')
       }
       lastVue = window.Vue || window.vue
