@@ -50,13 +50,16 @@ export const loadScript = function (url) {
   }) 
 }
 export const loadLib = function (content) {
-  const scriptEl = document.createElement('script');
-  scriptEl.className = 'VIS_LIB_SCRIPT_CLASSNAME';
-  scriptEl.type = 'text/javascript';
-  scriptEl.textContent = `
-    ${content}
-  `;
-  document.head.appendChild(scriptEl);
+  // const scriptEl = document.createElement('script');
+  // scriptEl.className = 'VIS_LIB_SCRIPT_CLASSNAME';
+  // scriptEl.type = 'text/javascript';
+  new Function(`
+  ${content}
+  `)();
+  // scriptEl.textContent = `
+  //   ${content}
+  // `;
+  // document.head.appendChild(scriptEl);
 }
 export const makeShadowRaw = function (el) {
   const childNodes = el.childNodes;

@@ -33,6 +33,9 @@ export const fileTransform = function (
   const { files } = fileSys;
   for (const item in files) {
     const val = files[item];
+    // if(item.startsWith('/lib/')) {
+    //   loadScript
+    // }
     if (typeof val.target === 'string') {
       // 字符串的文件
       ret[item] = val.target;

@@ -146,7 +146,7 @@ export default {
         },
       };
       makeShadowRaw(elWrap);
-      this._vm = lastVue.createApp(
+       this._vm = lastVue.createApp(
         lastVue.defineAsyncComponent( () => loader.loadModule('/index.vue', options)),
         this.$attrs,
       ).mount(elWrap?.shadowRoot);
@@ -154,8 +154,8 @@ export default {
     },
     reload() {
       setTimeout(() => {
-        this._vm.$.attrs = this.$attrs // hack 修改组件数据源实现状态更新
-        this._vm.$forceUpdate()
+        this._vm && (this._vm.$.attrs = this.$attrs) // hack 修改组件数据源实现状态更新
+        this._vm && this._vm.$forceUpdate()
       }, 0);
     },
     getVm () {

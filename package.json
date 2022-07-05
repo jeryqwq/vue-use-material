@@ -1,6 +1,6 @@
 {
   "name": "vue-use-material",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "",
   "main": "./dist/vue-use-material.umd.min.js",
   "scripts": {

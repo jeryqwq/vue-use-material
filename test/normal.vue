@@ -3,6 +3,9 @@
     <button @click="changeSrc" style="cursor: pointer">点我切换物料源</button>
     <h1 @click="add" style="cursor: pointer">我是外层项目， 点我props+1 {{test}}</h1>
     <UseMaterial :src="src" :test="test" ref="useMaterial" />
+    <UseMaterial :src="'http://10.28.184.222:8981/static/material/components/1539525839491223554/1.0.0'" :test="test" ref="useMaterial2" />
+    <UseMaterial :src="src" :test="test" ref="useMaterial" />
+
   </div>
 </template>
 
@@ -15,7 +18,7 @@ export default {
   data () {
     return {
       test: 0,
-      src: "http://127.0.0.1:7001/static/material/components/1539416291669495809/1.1.2"
+      src: "http://10.28.184.222:8981/static/material/components/1539416291669495809/1.1.2"
     }
   },
   mounted() {
