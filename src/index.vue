@@ -6,7 +6,7 @@
 import {loadScript, destoryPreview, addStyles, makeShadowRaw, cssUrlHandler}  from './utils/index'
 import { loadZipFile } from './utils/zip'
 import { fileTransform, isResource } from './utils/file'
-import fs from './utils/fs'
+import FileSystem from './utils/fs'
 
 let forceVue
 let lastVue
@@ -24,6 +24,7 @@ export default {
   },
   data () {
     return {
+      fs: {}
     }
   },
   watch: {
@@ -36,6 +37,7 @@ export default {
   },
   methods: {
     async init() {
+      this.fs = new FileSystem();
       forceVue = window.Vue || window.vue
       if(!(forceVue && forceVue.version.startsWith('3.2'))) { // vue 版本非3.2
         await loadScript(this.perfix + '/lib/vue.js')
@@ -47,9 +49,9 @@ export default {
       const sass = new window.Sass();
       const loader = window['vue3-sfc-loader']
       destoryPreview();
-      await loadZipFile(this.src, fs)
+      await loadZipFile(this.src, this.fs)
       const config = {
-        files: fileTransform(fs),
+        files: fileTransform(this.fs),
       };
       const elWrap = this.$refs.elWrap
       options = {
@@ -73,8 +75,8 @@ export default {
           },
         },
         addStyle: (context, scopedId, path) => {
-          const replaceUrlCss = cssUrlHandler(context, fs.files);
-          addStyles(replaceUrlCss, scopedId, { shadowEl: elWrap?.shadowRoot, path });
+          const replaceUrlCss = cssUrlHandler(context, this.fs.files);
+          addStyles(replaceUrlCss, scopedId, { shadowEl: elWrap.shadowRoot, path });
         },
         handleModule: async function (
           type,
@@ -127,7 +129,7 @@ export default {
                   type: '.' + path.split('.').pop(),
                   getContentData: async (asBinary) => {
                     if (res instanceof ArrayBuffer !== asBinary)
-                      log?.(
+                      log &&log(
                         'warn',
                         `unexpected data type. ${
                           asBinary ? 'binary' : 'string'
@@ -149,7 +151,7 @@ export default {
        this._vm = lastVue.createApp(
         lastVue.defineAsyncComponent( () => loader.loadModule('/index.vue', options)),
         this.$attrs,
-      ).mount(elWrap?.shadowRoot);
+      ).mount(elWrap.shadowRoot);
       window.Vue = forceVue
     },
     reload() {

@@ -5,7 +5,6 @@
     <UseMaterial :src="src" :test="test" ref="useMaterial" />
     <UseMaterial :src="'http://10.28.184.222:8981/static/material/components/1539525839491223554/1.0.0'" :test="test" ref="useMaterial2" />
     <UseMaterial :src="src" :test="test" ref="useMaterial" />
-
   </div>
 </template>
 
