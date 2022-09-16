@@ -24,7 +24,7 @@ export default {
   },
   data () {
     return {
-      fs: {}
+      fs: new FileSystem()
     }
   },
   watch: {
@@ -33,11 +33,10 @@ export default {
     }
   },
   async mounted() {
-   this.init()
+    this.init()
   },
   methods: {
     async init() {
-      this.fs = new FileSystem();
       forceVue = window.Vue || window.vue
       if(!(forceVue && forceVue.version.startsWith('3.2'))) { // vue 版本非3.2
         await loadScript(this.perfix + '/lib/vue.js')
@@ -53,6 +52,7 @@ export default {
       const config = {
         files: fileTransform(this.fs),
       };
+      
       const elWrap = this.$refs.elWrap
       options = {
         moduleCache: {
@@ -76,7 +76,7 @@ export default {
         },
         addStyle: (context, scopedId, path) => {
           const replaceUrlCss = cssUrlHandler(context, this.fs.files);
-          addStyles(replaceUrlCss, scopedId, { shadowEl: elWrap.shadowRoot, path });
+          addStyles(replaceUrlCss, scopedId, { shadowEl: elWrap?.shadowRoot, path });
         },
         handleModule: async function (
           type,
@@ -129,7 +129,7 @@ export default {
                   type: '.' + path.split('.').pop(),
                   getContentData: async (asBinary) => {
                     if (res instanceof ArrayBuffer !== asBinary)
-                      log &&log(
+                      log?.(
                         'warn',
                         `unexpected data type. ${
                           asBinary ? 'binary' : 'string'
@@ -151,7 +151,7 @@ export default {
        this._vm = lastVue.createApp(
         lastVue.defineAsyncComponent( () => loader.loadModule('/index.vue', options)),
         this.$attrs,
-      ).mount(elWrap.shadowRoot);
+      ).mount(elWrap?.shadowRoot);
       window.Vue = forceVue
     },
     reload() {

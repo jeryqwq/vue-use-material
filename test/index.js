@@ -1,3 +1,3 @@
-import { createApp } from 'vue'
+import Vue from 'vue'
 import normal from './normal.vue'
-createApp(normal).mount('#app')
+new Vue({render: h => h(normal)}).$mount('#app')
