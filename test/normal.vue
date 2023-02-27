@@ -4,9 +4,9 @@
     <h1 @click="add" style="cursor: pointer">我是外层项目， 点我props+1 {{test}}</h1>
     <div style="display: flex">
       <UseMaterial :src="src" :test="test" ref="useMaterial" />
-      <UseMaterial :src="'http://10.28.184.222:8981/static/material/components/1539525839491223554/1.0.0'" :test="test" ref="useMaterial2" />
+      <!-- <UseMaterial :src="'http://10.28.184.222:8981/static/material/components/1539525839491223554/1.0.0'" :test="test" ref="useMaterial2" />
       <UseMaterial :src="src" :test="test" ref="useMaterial" />
-      <use-material :src="src2" :test="test" ref="useMaterial" />
+      <use-material :src="src2" :test="test" ref="useMaterial" /> -->
     </div>
   </div>
 </template>
@@ -22,7 +22,7 @@ export default {
   data () {
     return {
       test: 0,
-      src: "http://10.28.184.222:8981/static/material/components/1539416291669495809/1.1.2",
+      src: "http://10.28.184.222:8981/static/material/blocks/1630018384402415618/1.0.0",
       src2: "http://10.28.184.222:8981/static/material/components/1539166635282714626/1.1.1"
     }
   },

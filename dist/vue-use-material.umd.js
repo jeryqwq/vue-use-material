@@ -5397,8 +5397,8 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/.pnpm/cache-loader@4.1.0_webpack@4.46.0/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"3a030cdf-vue-loader-template"}!./node_modules/.pnpm/cache-loader@4.1.0_webpack@4.46.0/node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/.pnpm/thread-loader@2.1.3_webpack@4.46.0/node_modules/thread-loader/dist/cjs.js!./node_modules/.pnpm/babel-loader@8.2.5_7k5t74zmen3ocxyd32avkcyrwe/node_modules/babel-loader/lib!./node_modules/.pnpm/vue-loader@15.10.0_geeguvfn2njjaew5w23blzhalq/node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/.pnpm/cache-loader@4.1.0_webpack@4.46.0/node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/.pnpm/vue-loader@15.10.0_geeguvfn2njjaew5w23blzhalq/node_modules/vue-loader/lib??vue-loader-options!./src/index.vue?vue&type=template&id=ac29de6c&
-var lib_vue_loader_options_srcvue_type_template_id_ac29de6c_render = function render() {
+// CONCATENATED MODULE: ./node_modules/.pnpm/cache-loader@4.1.0_webpack@4.46.0/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"3a030cdf-vue-loader-template"}!./node_modules/.pnpm/cache-loader@4.1.0_webpack@4.46.0/node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/.pnpm/thread-loader@2.1.3_webpack@4.46.0/node_modules/thread-loader/dist/cjs.js!./node_modules/.pnpm/babel-loader@8.2.5_7k5t74zmen3ocxyd32avkcyrwe/node_modules/babel-loader/lib!./node_modules/.pnpm/vue-loader@15.10.0_geeguvfn2njjaew5w23blzhalq/node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/.pnpm/cache-loader@4.1.0_webpack@4.46.0/node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/.pnpm/vue-loader@15.10.0_geeguvfn2njjaew5w23blzhalq/node_modules/vue-loader/lib??vue-loader-options!./src/index.vue?vue&type=template&id=25b3d8fa&
+var lib_vue_loader_options_srcvue_type_template_id_25b3d8fa_render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
@@ -5409,7 +5409,7 @@ var lib_vue_loader_options_srcvue_type_template_id_ac29de6c_render = function re
 
 var staticRenderFns = [];
 
-// CONCATENATED MODULE: ./src/index.vue?vue&type=template&id=ac29de6c&
+// CONCATENATED MODULE: ./src/index.vue?vue&type=template&id=25b3d8fa&
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/core-js@3.25.1/node_modules/core-js/modules/es.symbol.js
 var es_symbol = __webpack_require__("817d");
@@ -6840,7 +6840,7 @@ var lib_vue_loader_options_srcvue_type_script_lang_js_options;
 
                               _context3.t1.addStyle.call(_context3.t1, _context3.t2);
 
-                              return _context3.abrupt("return");
+                              return _context3.abrupt("return", true);
 
                             case 9:
                               return _context3.abrupt("return", new Promise(function (reslove) {
@@ -7108,7 +7108,7 @@ function normalizeComponent(
 
 var component = normalizeComponent(
   srcvue_type_script_lang_js_,
-  lib_vue_loader_options_srcvue_type_template_id_ac29de6c_render,
+  lib_vue_loader_options_srcvue_type_template_id_25b3d8fa_render,
   staticRenderFns,
   false,
   null,

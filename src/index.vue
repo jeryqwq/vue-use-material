@@ -87,7 +87,7 @@ export default {
             switch (type) {
               case '.css':
                 options.addStyle(await getContentData(false));
-                return;
+                return true;
               case '.scss': // 处理单个scss文件
                 return new Promise((reslove) => {
                   sass.compile(options.getFile(path), function (result) {
